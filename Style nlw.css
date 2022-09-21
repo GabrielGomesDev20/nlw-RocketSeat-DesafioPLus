@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body *{
+    font-family: 'Inter', 'sans-serif';
+}
+
+body{
+    background-image: url(./imagens/estrelas.png);
+     /* Caso queira colocar a sombra no fundo, só colar isso aqui em cima - linear-gradient(135deg, #121214 0%, #121212 65%, rgb(255, 166, 0) 100%)- */
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto; 
+    background-color: #121214;
+    /* background-image: linear-gradient(180deg, #121214 0%, #121214 50%, #121214 85%, #c91842 100%); */
+}
+
+header div img{  /* Imagem de perfil */
+    width: 100%;
+    border-radius: 50%;
+}
+
+header div{  /* Colocando o efeito de borda em volta da imagem de perfil */
+    background-image: linear-gradient(90deg, #c91842 0%, rgb(237, 169, 43) 100%);
+    width: 120px;
+    margin: auto;
+    border-radius: 50%;
+
+    display: flex;
+    padding: 4px;
+}
+
+header{  /* Apenas padding-top no header */
+    padding-top: 32px;
+    height: calc(120px + 32px)
+}
+
+main{ /* Main da página, onde fica todas as section's! */
+    max-width: 780px;
+    width: 90%;
+    margin: 32px auto;
+
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin-top: 20px;
+}
+
+
+/* Todas as 3 sections! */
+section .container{
+     background-color: #2A2634; 
+     border-radius: 8px;
+     padding: 32px;
+     padding-top: 24px;
+   
+}
+
+section{  /* Aspectos para colocar a suposta borda top nas sections */
+    background-image: linear-gradient(90deg, #c91842 0%, rgb(237, 169, 43) 100%);
+    padding-top: 4px;
+    border-radius: 10px;
+}
+
+
+
+/* Todos os h3, das 3 section */
+.container h2{ 
+    color: #FFFFFF;
+    letter-spacing: -0.47px;
+    margin-bottom: 5px;
+}
+
+
+
+/* Todos os P, das 3 section */
+.container p{
+    color: #A1A1AA;
+    letter-spacing: -0.18px;
+}
+
+
+
+/* Ul de filmes! */
+
+.container ul { /* Todas as Ul's */
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.container .ul-filmes li{ /* Os intens dentro da Ul de filmes! */
+    padding-right: 16px;
+}
+
+.container .ul-filmes img{ /* Imagens dos filmes */
+    border-radius: 8px;
+    transition: transform .2s linear;
+    width: 120px;
+    height: 180px;
+}
+
+
+/* Tive a ideia de colocar um gradient com base no box-shadow, mas no nth-child não quer funcionar! */
+.container .ul-filmes li img:hover{ /* Hover para dar fazer a imagem subir */
+    transform: translateY(-4px) translateX(4px);
+    box-shadow: -4px 4px #c91842;
+}
+
+/* Ul das séries! */
+
+.container .ul-series img{ /* Imagens das séries */
+    border-radius: 8px;
+    transition: transform .2s linear;
+    width: 120px;
+    height: 180px;
+}
+.container .ul-series li{ /* Os intens dentro da Ul de séries! */
+    padding-right: 16px;
+}
+
+.container .ul-series img:hover{ /* Hover para dar fazer a imagem subir */
+    transform: translateY(-4px) translateX(4px);
+    box-shadow: -4px 4px orange;
+}
+
+
+
+/* Ul dos Icones das Redes Socias! */
+
+.container .ul-redesSociais a{ /* Tamanho dos icons */
+    font-size: 1.7rem;
+}
+
+.container .ul-redesSociais li{ /* Espaçamento entre eles */
+    padding-right: 20px;
+}
+/* comentario aleatorio meu fi */
+.container .ul-redesSociais .fa-twitter{ /* Cor do twitter */
+    color: rgb(0,172,238);
+}
+
+.container .ul-redesSociais .fa-instagram{ /* Cor do insta */
+    color: #ff25d3;
+}
+
+.container .ul-redesSociais .fa-youtube{ /* Cor do Youtube */
+    color: red;
+}
+
+/* Button!!! */
+
+.fab button{  /* Botão que da pause na música! */
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background-image: linear-gradient(135deg, #c91842 0%, rgb(237, 169, 43) 100%);
+    border: none;
+    box-shadow: 0 1px 5px rgba(0,0,0,.4);
+    font-size: 20px;
+    color: black;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+
+/* Animações */
+
+header div{ /* Animação da minha foto de perfil */
+    animation: FromTop .8s .3s backwards;
+}
+
+main section{  /* Animação dos cards/section's */
+    animation: FromBottom .7s backwards;
+}
+
+main section:nth-child(1){
+    animation-delay: 0;
+}
+main section:nth-child(2){
+    animation-delay: .3s;
+}
+main section:nth-child(3){
+    animation-delay: .5s;
+}
+
+@keyframes FromTop{
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes FromBottom{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
